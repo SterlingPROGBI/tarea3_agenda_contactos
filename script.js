@@ -105,3 +105,26 @@ deleteBtn.onclick = () => {
     loadContacts();
     contactModal.style.display = 'none';
 };
+
+// Buscar contactos
+function searchContacts() {
+    const query = searchField.value.toLowerCase();
+    const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+    const filteredContacts = contacts.filter(contact => 
+        contact.firstName.toLowerCase().includes(query) || 
+        contact.lastName.toLowerCase().includes(query) || 
+        contact.phone.includes(query)
+    );
+    displayContacts(filteredContacts);
+}
+
+// Mostrar contactos filtrados
+function displayContacts(contacts) {
+    contactList.innerHTML = '';
+    contacts.forEach((contact, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${contact.firstName} ${contact.lastName}`;
+        li.addEventListener('click', () => showContactDetails(index));
+        contactList.appendChild(li);
+    });
+}
