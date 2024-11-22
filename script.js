@@ -50,3 +50,15 @@ contactForm.addEventListener('submit', function (e) {
     loadContacts();
     submitBtn.textContent = 'Agregar Contacto'; // Cambiar texto del botón
 });
+
+// Cargar contactos en la lista
+function loadContacts() {
+    const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+    contactList.innerHTML = '';
+    contacts.forEach((contact, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${contact.firstName} ${contact.lastName} ${" | "} ${contact.occupation} ${" | "} ${contact.phone}`;
+        li.addEventListener('click', () => showContactDetails(index));
+        contactList.appendChild(li);
+    });
+}
