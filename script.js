@@ -83,3 +83,16 @@ function showContactDetails(index) {
 closeBtn.onclick = () => {
     contactModal.style.display = 'none';
 };
+
+// Editar contacto
+editBtn.onclick = () => {
+    const contacts = JSON.parse(localStorage.getItem('contacts'));
+    const contact = contacts[editingIndex];
+    document.getElementById('firstName').value = contact.firstName;
+    document.getElementById('lastName').value = contact.lastName;
+    document.getElementById('phone').value = contact.phone;
+    document.getElementById('email').value = contact.email;
+    document.getElementById('address').value = contact.address;
+    document.getElementById('occupation').value = contact.occupation;
+    contactModal.style.display = 'none';
+};
