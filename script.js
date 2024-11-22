@@ -13,3 +13,40 @@ let editingIndex = -1;  // Variable para controlar si estamos editando un contac
 
 // Cargar contactos desde localStorage
 document.addEventListener('DOMContentLoaded', loadContacts);
+
+// Evento para agregar o editar contacto
+contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
+    const occupation = document.getElementById('occupation').value;
+
+    if (!validatePhone(phone)) {
+        alert('El teléfono no es válido');
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        alert('El correo electrónico no es válido');
+        return;
+    }
+
+    const newContact = { firstName, lastName, phone, email, address, occupation };
+    let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+
+    if (editingIndex === -1) {
+        contacts.push(newContact);  // Agregar nuevo contacto
+    } else {
+        contacts[editingIndex] = newContact;  // Editar contacto existente
+        editingIndex = -1;
+    }
+
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+    contactForm.reset();
+    loadContacts();
+    submitBtn.textContent = 'Agregar Contacto'; // Cambiar texto del botón
+});
