@@ -96,3 +96,12 @@ editBtn.onclick = () => {
     document.getElementById('occupation').value = contact.occupation;
     contactModal.style.display = 'none';
 };
+
+// Eliminar contacto
+deleteBtn.onclick = () => {
+    const contacts = JSON.parse(localStorage.getItem('contacts'));
+    contacts.splice(editingIndex, 1);
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+    loadContacts();
+    contactModal.style.display = 'none';
+};
