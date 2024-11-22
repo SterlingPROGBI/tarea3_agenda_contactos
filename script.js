@@ -106,6 +106,17 @@ deleteBtn.onclick = () => {
     contactModal.style.display = 'none';
 };
 
+// Validaciones
+function validatePhone(phone) {
+    const phoneRegex = /^[0-9]{10}$/;
+    return phoneRegex.test(phone);
+}
+
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
 // Buscar contactos
 function searchContacts() {
     const query = searchField.value.toLowerCase();
