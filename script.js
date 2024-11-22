@@ -62,3 +62,24 @@ function loadContacts() {
         contactList.appendChild(li);
     });
 }
+
+// Mostrar detalles del contacto
+function showContactDetails(index) {
+    const contacts = JSON.parse(localStorage.getItem('contacts'));
+    const contact = contacts[index];
+    contactDetails.innerHTML = `
+        <p><strong>Nombre:</strong> ${contact.firstName} ${contact.lastName}</p>
+        <p><strong>Teléfono:</strong> ${contact.phone}</p>
+        <p><strong>Correo:</strong> ${contact.email}</p>
+        <p><strong>Dirección:</strong> ${contact.address}</p>
+        <p><strong>Ocupación:</strong> ${contact.occupation}</p>
+    `;
+    editingIndex = index;  // Establecer el índice de edición
+    submitBtn.textContent = 'Actualizar Contacto'; // Cambiar texto del botón
+    contactModal.style.display = 'block';
+}
+
+// Cerrar ventana modal
+closeBtn.onclick = () => {
+    contactModal.style.display = 'none';
+};
