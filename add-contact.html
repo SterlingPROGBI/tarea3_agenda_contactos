@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Contactos</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+
+    <div class="container">
+        <h1>Gestión de Contactos</h1>
+
+        <!-- Campo de búsqueda -->
+        <input type="text" id="search" placeholder="Buscar contacto..." onkeyup="searchContacts()">
+    
+        <div class="form-container">
+            <!-- Formulario para agregar o editar contactos -->
+            <form id="contactForm">
+                <input type="text" id="firstName" placeholder="Nombre" required>
+                <input type="text" id="lastName" placeholder="Apellido" required>
+                <input type="tel" id="phone" placeholder="Teléfono" required>
+                <input type="email" id="email" placeholder="Correo Electrónico" required>
+                <input type="text" id="address" placeholder="Dirección" required>
+                <input type="text" id="occupation" placeholder="Ocupación" required>
+                <button type="submit" id="submitBtn">Agregar Contacto</button>
+                <br><br>
+                <center><a href="index.html" class="btn-custom">Volver a inicio</a></center>
+            </form>
+        </div>
+    
+        <div class="contact-list-container">
+            <h2>Lista de Contactos</h2>
+            <ul id="contactUl"></ul>
+        </div>
+    </div>
+    
+
+    <!-- Ventana flotante para mostrar detalles del contacto -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span id="closeBtn" class="close">&times;</span>
+            <h2>Detalles del Contacto</h2>
+            <div id="contactDetails"></div>
+            <button id="editBtn">Editar Contacto</button>
+            <button id="deleteBtn">Eliminar Contacto</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
