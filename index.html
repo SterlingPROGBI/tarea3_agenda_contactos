@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Contactos</title>
+    <!-- Incluyendo Bootstrap desde CDN -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css"> <!-- Si tienes un archivo adicional para personalizaciones -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Conctactos
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="add-contact.html">Agregar contacto</a></li>
+                      <li><a class="dropdown-item" href="add-contact.html">Gestionar contactos</a></li>
+                    </ul>
+                  </li>          
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="p-5 mb-4 m-5 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Bienvenido al Sistema de Gestión de Contactos</h1>
+          <p class="col-md-8 fs-4">Para comenzar, por favor dirígete a la sección "Contactos" en el menú superior y elige una opción o haz click en el botón de abajo.</p>
+          <a href="add-contact.html"><button class="btn btn-info btn-lg" type="button">Agrega tus contactos</button></a>
+          <a href="add-contact.html"><button class="btn btn-outline-danger btn-lg" type="button">Gestiona tus contactos</button></a>
+        </div>
+    </div>
+
+    <!-- Incluyendo los scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
