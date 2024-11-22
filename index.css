@@ -1,0 +1,17 @@
+/* Estilo para el fondo de la página */
+body {
+    background: #0575E6;
+background: -webkit-linear-gradient(to right, #021B79, #0575E6);
+background: linear-gradient(to right, #021B79, #0575E6);
+
+}
+
+/* Estilo para la tarjeta */
+.card {
+    border-radius: 15px;
+}
+
+/* Ajustar el espaciado superior para que el contenido no quede pegado al navbar */
+.container {
+    margin-top: 70px;
+}
